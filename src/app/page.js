@@ -7,7 +7,7 @@ export default function Home() {
         Bienvenido al e-Commerce
       </h1>
       <h2 style={{ textAlign: 'center', color: 'white', fontSize: '1.5em' }}>
-        Regístrate para empezar a comprar
+        Registrate para empezar a comprar
       </h2>
     </div>
   );
