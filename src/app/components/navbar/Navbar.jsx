@@ -7,11 +7,16 @@ const Navbar = () => {
     return(
         <nav className="navbar">
             <ul className="navbar-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#users">Users</a></li>
-                <li><a href="#sales">Sales</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="././pages/products/Product">Products</a></li>
+                <li><a href="././pages/users/User">Users</a></li>
+                <li><a href="././pages/sales/Sale">Sales</a></li>
+            </ul>
+            <ul className="registrer">
+            <li><a href="./loginForm/Login">Login</a></li>
             </ul>
         </nav>
     );
 };
+
+export default Navbar;
