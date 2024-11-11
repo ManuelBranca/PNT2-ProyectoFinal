@@ -12,3 +12,5 @@ export default function Home() {
     </div>
   );
 }
+
+// implementar todos las url del back
