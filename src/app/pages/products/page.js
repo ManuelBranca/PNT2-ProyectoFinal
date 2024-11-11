@@ -9,7 +9,7 @@ const ProductsPage = () => {
     const [pageSize] = useState(30);
 
     useEffect(() => {
-        fetch('COMPLETAR')
+        fetch('http://localhost:3000/api/products/getProducts')
         .then((response) => response.json())
         .then((data) => {
             setProducts(data);

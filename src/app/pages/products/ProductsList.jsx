@@ -1,6 +1,6 @@
 "use client";
 
-import Product from "@/app/products/Product";
+import Product from "./Product";
 
 const ProductsList = ({ products }) => {
     return (

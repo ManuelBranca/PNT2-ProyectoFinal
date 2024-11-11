@@ -15,11 +15,8 @@ function Product(props) {
                     <p><strong>Precio:</strong> ${props.price}</p>
                 </div>
                 <div>
-                    <Link href={`/products/details/${props._id}`} style={{ color: 'blueviolet', fontWeight: 'bold' }}>
+                    <Link href={`/products/description/${props._id}`} style={{ color: 'blueviolet', fontWeight: 'bold' }}>
                         Detalle
-                    </Link>
-                    <Link href={`/products/category/${props.category}`} style={{ color: 'greenyellow', fontWeight: 'bold' }}>
-                        Ver Categoría
                     </Link>
                 </div>
             </div>

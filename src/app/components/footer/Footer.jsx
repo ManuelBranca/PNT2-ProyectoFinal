@@ -1,6 +1,6 @@
 import React from "react";
 import './footer.css';
-
+import Link from "next/link";
 const Footer = () => {
     return (
         <footer className="footer">
@@ -13,10 +13,8 @@ const Footer = () => {
                     <div className="footer-section links">
                         <h3>Quick Links</h3>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><Link href={`/home`}>Home</Link></li>
+                            <li><Link href={`/pages/products`}>Products</Link></li>
                         </ul>
                     </div>
                     <div className="footer-section social-media">
