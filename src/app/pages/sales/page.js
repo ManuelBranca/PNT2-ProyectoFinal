@@ -9,7 +9,7 @@ const SalesPage = () => {
     const [pageSize] = useState(30);
 
     useEffect(() => {
-        fetch(`COMPLETAR`)
+        fetch(`http://localhost:3000/api/sales/getSales`)
         .then((response) => response.json())
         .then((data) => {
             setSales(data);

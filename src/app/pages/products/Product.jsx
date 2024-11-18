@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import "./product.css"
 /*
 MODIFICAR EN CASO DE SER NECESARIO
 */
 function Product(props) {
+    console.log(props)
+    // onClick para agregar producto al carrito
     return (
         <li>
             <div>
@@ -13,9 +16,11 @@ function Product(props) {
                     <img src={props.image} alt={props.name} style={{ borderRadius: '15px' }} />
                     <p>{props.description}</p>
                     <p><strong>Precio:</strong> ${props.price}</p>
+                    <p>Stock: {props.stock}</p>
                 </div>
                 <div>
-                    <Link href={`/products/description/${props._id}`} style={{ color: 'blueviolet', fontWeight: 'bold' }}>
+                    <button>Agregar al carrito</button>
+                    <Link href={`/products/description/${props._id}`} >
                         Detalle
                     </Link>
                 </div>

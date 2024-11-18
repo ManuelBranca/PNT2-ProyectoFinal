@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import "./sale.css"
 /*
 MODIFICAR EN CASO DE SER NECESARIO
 */
@@ -10,8 +11,8 @@ function Sale(props) {
             <div>
                 <div>
                     <h1 style={{ fontWeight: 'bold' }}>Venta: {props.saleId}</h1>
-                    <p><strong>Producto:</strong> {props.productName}</p>
-                    <p><strong>Comprador:</strong> {props.customerName}</p>
+                    <p><strong>Productos:</strong> {props.product}</p>
+                    <p><strong>Comprador:</strong> {props.userId}</p>
                     <p><strong>Fecha:</strong> {props.saleDate}</p>
                     <p><strong>Total:</strong> ${props.totalAmount}</p>
                 </div>
