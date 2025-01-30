@@ -9,7 +9,7 @@ const UserPage = () => {
     const [pageSize] = useState(30);
 
     useEffect(() => {
-        fetch(`COMPLETAR`)
+        fetch(`http://localhost:3000/api/users/getUsers`)
         .then((response) => response.json())
         .then((data) => {
             setUsers(data);

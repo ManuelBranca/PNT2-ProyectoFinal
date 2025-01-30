@@ -1,43 +1,26 @@
 "use client";
 
-import ProductsList from "./ProductsList";
 import { useState, useEffect } from "react";
+import ProductsList from "./ProductsList";
 
-const ProductsPage = () => {
+const ProductsPage = (props) => { // Cambié `function` por `const` para usar la declaración de función flecha
     const [products, setProducts] = useState([]);
-    const [page, setPage] = useState(1);
-    const [pageSize] = useState(30);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/products/getProducts')
-        .then((response) => response.json())
-        .then((data) => {
-            setProducts(data);
-        }).catch((error) => console.log(error));
-    }, [page,pageSize]);
+        fetch("http://localhost:3000/api/products/getProducts")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                setProducts(data);
+            })
+            .catch(error => console.log(error));
+    }, []);
 
     return (
         <div>
-            <div>
-                <ProductsList products={products} />
-            </div>
-            <div>
-                <button 
-                    onClick={() => setPage((prevPage) => prevPage - 1)} 
-                    disabled={page === 1} 
-                    style={{ color: 'red', fontWeight: 'bold' }}>
-                    Anterior
-                </button>
-                <button 
-                    onClick={() => setPage((prevPage) => prevPage + 1)} 
-                    style={{ color: 'yellow', fontWeight: 'bold' }}>
-                    Siguiente
-                </button>
-            </div>
+            <ProductsList products={products} />
         </div>
     );
 }
 
 export default ProductsPage;
-
-
