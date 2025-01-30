@@ -1,6 +1,6 @@
 "use client";
 
-import Sale from "@/app/sales/Sale";
+import Sale from "@/app/pages/sales/Sale";
 
 const SalesList = ({ sales }) => {
     return (

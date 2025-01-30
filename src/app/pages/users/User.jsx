@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 
-/*
-MODIFICAR EN CASO DE SER NECESARIO
-*/
+
 function User(props) {
     return (
         <li>
@@ -16,7 +14,7 @@ function User(props) {
                     <p><strong>Email:</strong> {props.email}</p>
                 </div>
                 <div>
-                    <Link href={`/users/details/${props._id}`} style={{ color: 'blueviolet', fontWeight: 'bold' }}>
+                    <Link href={`/pages/sales/${props._id}`} style={{ color: 'blueviolet', fontWeight: 'bold' }}>
                         Ver Detalles
                     </Link>
                 </div>

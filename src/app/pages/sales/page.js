@@ -9,11 +9,17 @@ const SalesPage = () => {
     const [pageSize] = useState(30);
 
     useEffect(() => {
-        fetch(`COMPLETAR`)
-        .then((response) => response.json())
-        .then((data) => {
-            setSales(data);
-        }).catch((error) => console.log(error));
+        const fetchSales = async () => {
+            try {
+                const response = await fetch(`http://localhost:3000/api/sales/getSales`);
+                const data = await response.json();
+                setSales(data);
+            } catch (error) {
+                console.error("Error fetching sales data:", error);
+            }
+        };
+
+        fetchSales();
     }, [page, pageSize]);
 
     return (
@@ -21,21 +27,23 @@ const SalesPage = () => {
             <div>
                 <SalesList sales={sales} />
             </div>
-            <div>
-                <button 
-                    onClick={() => setPage((prevPage) => prevPage - 1)} 
-                    disabled={page === 1} 
-                    style={{ color: 'red', fontWeight: 'bold' }}>
+            <div style={{ marginTop: "20px", textAlign: "center" }}>
+                <button
+                    onClick={() => setPage((prevPage) => prevPage - 1)}
+                    disabled={page === 1}
+                    style={{ color: "red", fontWeight: "bold", marginRight: "10px" }}
+                >
                     Anterior
                 </button>
-                <button 
-                    onClick={() => setPage((prevPage) => prevPage + 1)} 
-                    style={{ color: 'yellow', fontWeight: 'bold' }}>
+                <button
+                    onClick={() => setPage((prevPage) => prevPage + 1)}
+                    style={{ color: "yellow", fontWeight: "bold" }}
+                >
                     Siguiente
                 </button>
             </div>
         </div>
     );
-}
+};
 
 export default SalesPage;

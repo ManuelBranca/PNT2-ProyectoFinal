@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-/*
-MODIFICAR EN CASO DE SER NECESARIO
-*/
+
 function Sale(props) {
     return (
         <li>
@@ -16,10 +14,10 @@ function Sale(props) {
                     <p><strong>Total:</strong> ${props.totalAmount}</p>
                 </div>
                 <div>
-                    <Link href={`/sales/details/${props._id}`} style={{ color: 'blueviolet', fontWeight: 'bold' }}>
+                    <Link href={`/pages/sales/${props._id}`} style={{ color: 'blueviolet', fontWeight: 'bold' }}>
                         Ver Detalles
                     </Link>
-                    <Link href={`/sales/customer/${props.customerId}`} style={{ color: 'greenyellow', fontWeight: 'bold' }}>
+                    <Link href={`/pages/users/${props._id}`} style={{ color: 'greenyellow', fontWeight: 'bold' }}>
                         Ver Comprador
                     </Link>
                 </div>
